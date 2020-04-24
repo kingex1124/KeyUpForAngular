@@ -1,0 +1,23 @@
+<div *ngIf="currOperation === operation.home" >
+<p>home works!</p>
+<div (keyup)="onKey($event)">
+<input #ControllerRegin>
+</div>
+<div>
+<label>ControllerPage</label>
+</div>
+<div>
+<span (keyup)="onKey($event)">
+  <button #ToPage1 (click)="onClick1()">Page1</button>
+  <button #ToPage2 (click)="onClick2()">Page2</button>
+  <button #ToPage3 (click)="onClick3()">Page3</button>
+  <button #ToPage4 (click)="onClick4()">Page4</button>
+</span>
+</div>
+
+</div>
+<app-page1 *ngIf="currOperation === operation.page1" (focusInput)="focusInputBind($event)"></app-page1>
+<app-page2 *ngIf="currOperation === operation.page2" (focusInput)="focusInputBind($event)"></app-page2>
+<app-page3 *ngIf="currOperation === operation.page3" (focusInput)="focusInputBind($event)"></app-page3>
+<app-page4 *ngIf="currOperation === operation.page4" (focusInput)="focusInputBind($event)"></app-page4>
+

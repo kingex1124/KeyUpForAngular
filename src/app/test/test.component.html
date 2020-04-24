@@ -1,0 +1,6 @@
+<input #first (keyup)="onKey($event)">
+<p>{{values}}</p>
+
+<input #search (keyup)="onKey2($event)">
+
+<button #btn (click)="Test()" (keyup)="onKey3($event)">test</button>

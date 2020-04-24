@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "KeyUpForAngular"
+    }
+  },
+  "defaultProject": "KeyUpForAngular",
+  "cli": {
+    "analytics": "b86a8819-8596-4525-b7c7-af731adcb5d0"
+  }
 }
