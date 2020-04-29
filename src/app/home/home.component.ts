@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LayoutService } from '../service/layout.service';
 import { Operation } from '../models/operation.enum';
+// import { app, BrowserWindow, remote  } from 'electron';
+import {  BrowserWindow, remote } from 'electron';
+
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,6 @@ import { Operation } from '../models/operation.enum';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   // 轉頁屬性
   operation = Operation;
   currOperation: Operation = Operation.home;
@@ -32,6 +34,14 @@ export class HomeComponent implements OnInit {
     switch (event.key) {
       case 'c': {
         this.layoutService.changeOperation(Operation.page1);
+        let newWin = new BrowserWindow({
+          width: 500,
+          height: 500
+      });
+        newWin.loadFile('yellow.html');
+        newWin.on('closed',() =>{
+          newWin = null;
+      });
         break;
       }
       case 'v': {
